@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>သဲသဲ... စိတ်မဆိုးနဲ့နော် ❤️</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans Myanmar","Myanmar Text",sans-serif;
+  background:radial-gradient(circle at 50% 25%,#5b3c88 0,#251b4d 38%,#090b25 100%);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+}
+body:before{
+ content:"";position:fixed;inset:0;
+ background:
+ radial-gradient(circle at 15% 20%,rgba(255,190,230,.18),transparent 18%),
+ radial-gradient(circle at 85% 75%,rgba(130,180,255,.14),transparent 22%);
+ animation:glow 6s ease-in-out infinite alternate;
+}
+@keyframes glow{to{transform:scale(1.08);opacity:.75}}
+.stars,.hearts{position:fixed;inset:0;pointer-events:none}
+.star{
+ position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;
+ box-shadow:0 0 9px #fff;animation:twinkle 2s ease-in-out infinite;
+}
+@keyframes twinkle{50%{opacity:.2;transform:scale(.5)}}
+.card{
+ position:relative;width:min(90%,430px);padding:34px 25px 30px;text-align:center;
+ border:1px solid rgba(255,255,255,.22);border-radius:30px;
+ background:rgba(255,255,255,.09);backdrop-filter:blur(16px);
+ box-shadow:0 20px 70px rgba(0,0,0,.45);
+ animation:appear 1s ease;
+}
+@keyframes appear{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:none}}
+.moon{font-size:48px;filter:drop-shadow(0 0 15px #ffe6a8);margin-bottom:5px}
+h1{font-size:27px;margin:5px 0 15px}
+p{font-size:16px;line-height:1.9;margin:10px 0;color:#f8edf7}
+.love{font-size:21px;color:#ffd6ee;font-weight:700;margin:18px 0}
+button{
+ border:0;border-radius:999px;padding:14px 25px;margin-top:12px;
+ font-size:16px;font-weight:700;color:#fff;cursor:pointer;
+ background:linear-gradient(135deg,#ff5c9f,#a96cff);
+ box-shadow:0 8px 25px rgba(255,92,159,.3);
+ transition:.25s;
+}
+button:hover{transform:translateY(-2px) scale(1.03)}
+#secret{display:none;margin-top:18px;color:#ffe1f0}
+.heart{
+ position:absolute;font-size:18px;animation:float 6s linear forwards;opacity:0;
+}
+@keyframes float{
+ 0%{transform:translateY(110vh) scale(.6) rotate(0);opacity:0}
+ 12%{opacity:.9}100%{transform:translateY(-15vh) scale(1.2) rotate(25deg);opacity:0}
+}
+.footer{font-size:11px;opacity:.55;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="hearts" id="hearts"></div>
+
+<main class="card">
+  <div class="moon">🌙</div>
+  <h1>သဲသဲ… စိတ်မဆိုးနဲ့နော် 🥺❤️</h1>
+
+  <p>
+    ကိုယ့်ဘက်က မသိမသာနဲ့ သဲသဲစိတ်ဆိုးသွားအောင်
+    လုပ်မိတာရှိရင် တကယ်တောင်းပန်ပါတယ်နော်။
+  </p>
+
+  <p>
+    ကိုယ်က သဲသဲကို စိတ်ပျက်စေချင်တာလည်း မဟုတ်ဘူး၊
+    စိတ်မကောင်းဖြစ်စေချင်တာလည်း မဟုတ်ဘူး။
+    သဲသဲပြုံးနေတာကိုပဲ မြင်ချင်တာပါ ❤️
+  </p>
+
+  <div class="love">“အရမ်းချစ်တယ် သဲသဲ Lynn” 💗</div>
+
+  <p>
+    ဒီတစ်ခါ ကိုယ့်ကို ခွင့်လွှတ်ပေးပါနော်…
+    နောက်ဆို သဲသဲရဲ့စိတ်ကို ပိုဂရုစိုက်ပေးမယ်။ 🫶
+  </p>
+
+  <button onclick="forgive()">ခွင့်လွှတ်ပေးမယ် ❤️</button>
+
+  <div id="secret">
+    ဟီး… 🥹❤️<br>
+    သဲသဲက ခွင့်လွှတ်ပေးပြီဆိုတော့<br>
+    ကိုယ်က ပိုချစ်သွားပြီနော်။<br><br>
+    🌹 အာဘွား… အာဘွား… အာဘွား… 🌹
+  </div>
+
+  <div class="footer">Made with love, just for သဲသဲ 💕</div>
+</main>
+
+<script>
+const stars=document.getElementById("stars");
+for(let i=0;i<75;i++){
+ const s=document.createElement("i");s.className="star";
+ s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";
+ s.style.animationDelay=Math.random()*2+"s";
+ s.style.opacity=.25+Math.random()*.75;stars.appendChild(s);
+}
+const hearts=document.getElementById("hearts");
+const emojis=["❤️","💗","💕","💖","✨","🌸"];
+function makeHeart(){
+ const h=document.createElement("span");h.className="heart";
+ h.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+ h.style.left=Math.random()*100+"%";
+ h.style.animationDuration=(4+Math.random()*4)+"s";
+ h.style.fontSize=(14+Math.random()*18)+"px";
+ hearts.appendChild(h);setTimeout(()=>h.remove(),8000);
+}
+setInterval(makeHeart,450);
+
+function forgive(){
+ document.getElementById("secret").style.display="block";
+ for(let i=0;i<22;i++) setTimeout(makeHeart,i*70);
+}
+</script>
+</body>
+</html>
